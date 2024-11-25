@@ -31,6 +31,7 @@ function checkDraw() {
     }, 200);
   }
 }
+/* voiture*/
 
 function resetGame() {
   cells.forEach(cell => {
