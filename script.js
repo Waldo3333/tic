@@ -33,7 +33,7 @@ const winningCombinations = [
 ];
 
 function checkDraw() {
-  return moveCount === 9;
+  return moveCount >= 9;
 }
 
 function resetGame() {
@@ -44,6 +44,8 @@ function resetGame() {
   players.one.cases = [];
   players.two.cases = [];
   moveCount = 0;
+
+  playerTurn = 'one';
 }
 
 function getCurrentPlayer() {
@@ -85,14 +87,13 @@ function switchPlayer() {
 }
 
 function onCellClick({ target }) {
+  moveCount++;
   addPlayerCell(target);
 
   if (checkWin()) onWin();
   if (checkDraw()) onDraw();
 
   switchPlayer();
-
-  moveCount++;
 }
 
 function init() {
