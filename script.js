@@ -23,7 +23,7 @@ let moveCount = 0;
 
 const winningCombinations = [
   ['a1', 'a2', 'a3'], // Ligne
-  ['b1', 'b2', 'b3'], // Ligne 
+  ['b1', 'b2', 'b3'], // Ligne
   ['c1', 'c2', 'c3'], // Ligne
   ['a1', 'b1', 'c1'], // Colonne
   ['a2', 'b2', 'c2'], // Colonne
@@ -62,7 +62,8 @@ function onWin() {
   alert(`Player ${winingPlayer.name} a gagné !`);
 
   winingPlayer.score++;
-  winingPlayer.scoreContainer.querySelector('.score').text = winingPlayer.score;
+  winingPlayer.scoreContainer.querySelector('.score').innerText =
+    winingPlayer.score;
 
   resetGame();
 }
@@ -76,7 +77,7 @@ function addPlayerCell(target) {
   const player = getCurrentPlayer();
 
   player.cases.push(target.id);
-  target.text = player.mark;
+  target.innerText = player.mark;
 }
 
 function switchPlayer() {
