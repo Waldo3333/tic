@@ -41,8 +41,8 @@ function resetGame() {
     cell.innerText = '';
   });
 
-  playerOneCase = [];
-  playerTwoCase = [];
+  players.one.cases = [];
+  players.two.cases = [];
   moveCount = 0;
 }
 
